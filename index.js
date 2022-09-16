@@ -1,4 +1,6 @@
 console.log('Hello world');
-alert('Hello');
-prompt('Are you 18?')
-confirm('yes')
+console.log(35);
+console.log(true);
+console.log(null);
+console.log(undefined);
+console.log(1n);
