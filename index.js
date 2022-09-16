@@ -1,35 +1,23 @@
 /* 
 
-numeric types 
+typeof
 
 */
 
-let a = 3;
-let b = 5;
-let c;
-c = a + b;
-c = a - b;
-c = a * b;
-c = a / b;
-c = a / 0; // Infinity
-c = a / Infinity; //0
-c = 5 / 'a'; // NaN
-c = 'Hello' + 'World'; // 'HelloWorld' конкатинація рядків (завжди повертає рядок)
-c = 'Hello' * 'World'; // NaN
-c = 4 + 'hello'; // '4hello'
-c = null + ''; // 'null'
-c = true + ''; // 'true'
+let a = 5;
+console.log(typeof(a)) // number
 
-с = '23' * 1; // 23
-с = '23' - 0; // 23
-c = Number('23') // 23
+let n = 'hello';
+console.log(typeof(n)) // string
 
-Boolean('') // false
-Boolean(null) // false
-Boolean(undefined) // false
-Boolean('1') // true
-Boolean(2) // true
-Boolean({}) // true
+let b = true;
+console.log(typeof(b)) // boolean
 
+let c = undefined;
+console.log(typeof(c)); // undefined
 
-console.log(c);
+let d = null;
+console.log(typeof(d)); //object
+
+let e = 1n;
+console.log(typeof(e)); //bigint
