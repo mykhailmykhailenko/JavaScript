@@ -1,23 +1,14 @@
-/* 
+const text = 'Маша сказала: "Привіт"'; // якщо потрібні кавички ставимо двойні кавички 
 
-typeof
 
-*/
+const text1 = 'Маша сказала: \n"Привіт"'; //  \n перенос рядка
 
-let a = 5;
-console.log(typeof(a)) // number
+const text2 = '\t Маша сказала: "Привіт"'; //  \t табуляція (абзац)
 
-let n = 'hello';
-console.log(typeof(n)) // string
+const text3 = 'Маша сказала: \'Привіт"'; // \ єкрануємо кавичку (якщо потрібні одинарна)
 
-let b = true;
-console.log(typeof(b)) // boolean
+console.log(text);
+console.log(text1);
+console.log(text2);
+console.log(text3);
 
-let c = undefined;
-console.log(typeof(c)); // undefined
-
-let d = null;
-console.log(typeof(d)); //object
-
-let e = 1n;
-console.log(typeof(e)); //bigint
