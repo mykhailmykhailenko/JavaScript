@@ -1,7 +1,7 @@
-let a = Number(prompt('Скільки вам років?'));
-
-if (a >= 18)  {
-    console.log('Ви повнолітній!')
-} else {
-    console.log('Ви неповнолітній!')
+function multiplicateOfTwo (a, b) {
+    let result = a * b;
+    return result
 }
+
+let res = multiplicateOfTwo(2, 3);
+console.log(res)
