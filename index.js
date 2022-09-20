@@ -1,29 +1,6 @@
-function hello() { //Function declaration
-    console.log('hello, user');
-}
+// const sum = 2 + 2;
+// (sum === 4) ? alert ('true') : alert('false');
+// let year = Number(prompt('Скільки вам років?'));
 
-
-hello();
-
-/*
-function ім'я_функції(параметри) {
-    блок коду, який буде виконуватись
-}
-для виклику функції
-ім'я_функції()
-doSomething
-calculateAnnualReport
-getSumOfTwoNumbers
-*/
-
-
-
-const hello2 = function() { //Function Expression
-
-}
-
-hello2()
-
-
-const arrFun = (args) => { //Arrow Function
-    //блок коду, який виконується
+let old = (Number(prompt('Скільки вам років?')) >= 18) ? 'Повнолітній' : 'Неповнолітній';
+console.log(old)
