@@ -1,9 +1,7 @@
-const password = 'GoodPassword';
-let userPassword
+let a = 1;
 
-do {
-    userPassword = prompt('Введіть пароль:');
-} while (password !== userPassword)
-
-
-console.log('Пароль прaвильний')
+while (a++ < 10) {
+    if (a % 2 === 0) {
+        console.log(a)
+    } 
+}
