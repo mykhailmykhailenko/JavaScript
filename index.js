@@ -1,58 +1,27 @@
-// let user = {
-//     firstName: 'Alex',
-//     lastName: 'Doe',
-//     age: 20,
-//     email: 'test@mail.com'
-// }
+const a = {
+    key: 'value',
+    key2: 'value2'
+}
 
-// for (let key in user) {
-//     console.log(key)
-// }
-// firstName
-// lastName
-// age
-// email
+const b = {
+    key: 'value',
+    key2: 'value2'
+}
 
-// for (let key in user) {
-//     console.log(user[key])
-// }
-// Alex
-// Doe
-// 20
-// est@mail.com
-
-// Exercise 1
-
-// let obj = {
-//     a: 1,
-//     b: 2,
-//     c: 5,
-//     d: 7,
-//     e: 9
-// }
-
-// let sum = 0;
-
-// for (let key in obj) {
-//     sum = obj[key] + sum
-// }
-// console.log(sum)
-
-// Exercise 2
-
-// let obj1 = {}
-// let obj2 = {
-//     a: 1
-// }
-
-// function checkObject (object) {
-//     for (let key in object) {
-//         if (key) {
-//             return false
-//         }
-//     } 
-//     return true
-// }
+const c = {
+    key: 123,
+    key2: 'value2'
+}
 
 
-
+function checkObject (object1, object2) {
+   for (let i in object1) {
+    for (let j in object2) {
+        if (object1[i] === object2[j]) {
+            return true
+        } else {
+            return false
+        }
+    }
+   }
+}
