@@ -1,42 +1,10 @@
-// for (ініціалізація ; умова ; інкрементація; ) {
-//     блок коду
-// }
+/* if - else if */
 
-// for (let a = 0; a <= 10; a++) {
-//     console.log(a)
-// }
+const userAge = Number(prompt('How old are you?'));
 
-
-// function areaRectangle (width, height) {
-//     let result = width * height
-//     return result
-// }
-
-// areaRectangle (5, 10)
-
-// function circleLength (diameter) {
-//     const PI = 3.14;
-//     let result = PI * diameter
-//     return result
-// }
-
-// circleLength (5)
-
-// for (let i = 1; i <=100; i++) {
-//     if (i % 3 === 0 && i % 5 === 0) {
-//         console.log('FizzBuzz')
-//     } else if (i % 5 === 0) {
-//         console.log('Buzz')
-//     } else if (i % 3 === 0) {
-//         console.log('Fizz')
-//     } else {
-//         console.log(i)
-//     }
-// }
-
-function calculate (number) {
-    for (let i = 1; i <= number; i++) {
-    console.log(number / i)
-    }
-    
-}
+if(userAge > 40) {
+    console.log('Your age is bigger than 40')
+} else if (userAge > 20 && userAge < 40) {
+    console.log('Your are in 20 to 40');
+} else {
+    console.log('else')
