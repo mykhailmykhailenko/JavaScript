@@ -1,21 +1,11 @@
-const password = 'GoodPassword';
+/* For */
+
+// for (ініціалізація; умова; інкрементація) {
+//     блок коду
+// }
 
 
-// let userValue = '';
-// do {
-//     userValue = prompt('Type your password');
-// } while (userValue !== password);
-// console.log('Password correct');
-
-let k = 0;
-let sum = 0;
-while (k++ < 5) {
-    debugger;
-    if(k % 2) {
-        continue;
-    }
-    sum += k;
+for (let i = 0; i < 10; i++) {
+    console.log(i);
+//    break;
 }
-
-
-console.log(sum);
