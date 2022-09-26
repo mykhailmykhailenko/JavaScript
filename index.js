@@ -1,48 +1,25 @@
-// function User(firstName, lastName) {
-//     // {}, кладе його у this
-//     this.firstName = firstName;
-//     this.lastName = lastName;
-//     this.age = 20;
-//     this.sayHello = function() {
-//         console.log(this.firstName + ' say: "Hello"');
-//     }
-// }
-
-
-// const us = new User('Jack', 'Sparrow');
-// us.firstName;
-
-
 /*
-Функція-конструктор User.
-Юзер має:
-- ім'я
-- прізвище
-- вік
-- мейл
-- пароль
-- залогінений (isLogIn) 
-Методи:
-- повне ім'я - повертає рядок з іменем і прізвищем
-- signIn - приймає пароль, порівнюємо його з паролем, який зберігаємо, якщо вони співпадають - користувач буде залогінений. Якщо ні, відповідаємо "неправильний пароль"
+Функція-конструктор робітника (Worker). Робітник має ім'я, прізвище, ставку за день (rate), кількість відпрацьованих днів в цьому місяці.
+Метод:
+getSalary - має розрахувати, скільки робітник отримає зп в цьому місяці, засн. на ставці та кількості відпрацьованих днів.
 */
 
-function User(firstName, lastName, age, email, password) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.age = age;
-    this.email = email;
-    this.password = password;
-    this.isLogIn = false;
-    this.getFullName = function () {
-        return this.firstName + ' ' + this.lastName;
-    }
-    this.signIn = function(pass) {
-        if( pass === this.password) {
-            this.isLogIn = true;
-            return 'You are logged in'
-        } else {
-            return 'Password incorrect'
-        }
-    }
+function Worker(firstName, lastName, rate, days) {
+this.firstName = firstName;
+this.lastName = lastName;
+if(rate < 0) {
+this.rate = 0;
+} else {
+this.rate = rate; 
+}
+if (days > 31) {
+this.days = 31; 
+} else {
+this.days = days;
+}
+this.getSalary = function() {
+return this.rate * this.days;
+}
+
+return this; // primitive will be ignored, this will be returned
 }
