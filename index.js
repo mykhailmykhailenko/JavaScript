@@ -1,13 +1,12 @@
 'use strict'
 
-const arrNative = [2,3,4,5];
+function sumOfAllArguments() {
+    let sum = 0;
+        for (let i = 0; i < arguments.length; i++) {
+            sum += arguments[i];    
+        }
+  return sum;
+}
 
-function multyElem (num) {
-    return num * 2
-}
-const myArr = [];
-for (let i = 0; i < arrNative.length; i++) {
-    // myArr[i] = multyElem(arrNative[i])
-    myArr.push(multyElem(arrNative[i]))
-}
-console.log(myArr)
+const arr = Array.from(arguments)
+console.log(arr);
