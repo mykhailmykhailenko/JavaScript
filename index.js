@@ -1,14 +1,26 @@
 'use strict'
 
-const obj1 = {
-    key: 'value'
-};
-
-
-const obj2 = {
-    method: function() {
-        console.log('hi')
-    }
+function Ladder () {
+    this.currentStep = 0;
 }
 
-obj1.__proto__ = obj2;
+function LadderMethods () {
+    this.up = function() {
+        this.currentStep++
+        return this
+    }
+    this.down = function() {
+        this.currentStep--
+        return this
+    }
+    this.showStep = function() {
+        return this.currentStep
+    }
+    
+}
+
+const allLadderMethods = new LadderMethods();
+Ladder.prototype = allLadderMethods;
+
+const ladder = new Ladder();
+ladder.up().down().down().up().up().showStep() //1
