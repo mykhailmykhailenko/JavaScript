@@ -1,46 +1,93 @@
 'use strict'
 
-function User (firstName, lastName, age, mail, isSubscribe) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.age = age;
-    this.mail = mail;
-    this.isSubscribe = isSubscribe;
-}
+// TASK 1
 
-function getRandomArbitrary (min, max) {
-    return Math.round(Math.random() * (max-min) + min);
-}
+// const obj1 = {
+//     test: 'supervalue',
+//     key: 1
+// }
 
-function createArrayOfUsers (quantity){
-    const userArr = [];
-    for (let i = 0; i < quantity; i++) {
-        const user = new User(`Name ${i}`, `LastName ${i}`, getRandomArbitrary(1, 100), `mail${i}@com`, Boolean(getRandomArbitrary(0, 1)))
-        userArr.push(user);
+// function test () {
+//     console.log(this.test);
+// }
+
+// const objectFunction = test.bind(obj1);
+
+// // test.call(obj1)
+
+// objectFunction ();
+
+
+
+// TASK 2
+
+// for (let i = 1; i <= 10; i++) {
+//     for (let j = 1; j <= 10; j++)
+//     {
+//         console.log(`${i} * ${j} = ${i*j}`)
+//     }
+//     console.log('----------------')
+// } 
+
+// табл множення
+
+
+//TASK 3
+
+// let stars = ''
+// for (let i = 1; i <= 8; i++) {
+//     for (let j = 1; j <= 1; j++)
+//     {
+//         stars += '*';
+//     }
+//     console.log(stars)
+// } 
+
+// прямокутний трикутник з зірочок
+
+// TASK4
+
+//variant 1
+// let stars = '';
+// function squa (dimention) {
+//     for (let i = 0; i <= dimention ; i++) {
+//         for (let j = 0; j <= dimention; j++){
+//             if(i === 0 || i === dimention || j === 0 || j === dimention || i === dimention - j) {
+//                 stars += '*';
+//             }  else {
+//                 stars += ' ';
+//             }
+//         }
+//         stars += '\n'
+//     }
+//     console.log(stars)
+// squa(10) 
+
+// // variant 2
+// let stars = '';
+// function squa (dimention) {
+//     for (let i = 0; i <= dimention ; i++) {
+//         for (let j = 0; j <= dimention; j++){
+//             if(i === 0 || i === dimention || j === 0 || j === dimention || i === j) {
+//                 stars += '*';
+//             }  else {
+//                 stars += ' ';
+//             }
+//         }
+//         stars += '\n'
+//     }
+//     console.log(stars)
+// squa(10) 
+
+//Hometask
+// діапазон значень, вивести на консоль массив дільників кожного числа з цього діапазону
+
+function divDiap (a, b){ 
+    for (let i = a; i <= b; i++) {
+        for (let j = 1; j <= b; j++){
+            if (i % j === 0) {
+                console.log(`${i} - ${j}`)
+            }     
+        }
     }
-return userArr
 }
-
-const arrUsers = createArrayOfUsers(50);
-// console.table(arrUsers)
-
-
-
-const userNames = arrUsers.map(function (userObj) {
-    return `${userObj.firstName} ${userObj.lastName}`
-})
-// console.log(userNames)
-
-arrUsers.sort(function(usA, usB) {
-    return usA.age - usB.age;
-})
-
-const filteredAge = arrUsers.filter(function (elem) {
-    return elem.age >= 18 && elem.isSubscribe === true
-})
-// console.table(filteredAge)
-
-const userMails = filteredAge.map(function (obj) {
-    return obj.mail
-})
-console.log(userMails)
