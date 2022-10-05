@@ -1,29 +1,16 @@
-class User {
-    constructor(mail, password) {
-        this.mail = mail;
-        this.password = password;
-        this.isBanned = false;
+class Worker {
+    #rate;
+
+    constructor(name, rate, days) {
+        this.name = name;
+        this.rate = rate;
+        if(value < 0 ) {
+            throw new RangeError('rate must be > 0');
+        }
+        this.#rate = value;
     }
 
-    sayHello () {
-        return `${this.mail} says: 'Hello!'`
-    }
-
-}
-
-class Moderator extends User {
-    constructor(mail, password) {
-        super(mail, password)
-    }
-
-    giveBanned (obj) {
-        return obj.isBanned = true;
+    get rate() {
+        return this.#rate;
     }
 }
-
-const user1 = new User('misha@ukr.net', '123321')
-user1.sayHello()
-
-const moderatorMain = new Moderator('moderatorMain@ukr.net', '123321');
-
-moderatorMain.giveBanned(user1)
