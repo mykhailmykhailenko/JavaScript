@@ -1,41 +1,39 @@
 'use strict'
 
 
-/*
-Клас Друг
-Властивості:
-- має ім'я
-- має власні кошти
-- має друга, який теж має власні кошти.
-- друг може мати друга, або не мати (null)
-Метод класу
-countMoney() 
-Порахувати загальну кількість грошей у вас і вашого друга (і друга вашого друга)
-*/
-
-
-class Friend{
-    constructor(name, ownAmount, friend) {
+ class Worker {
+    constructor(name, rate, days) {
         this.name = name;
-        this.ownAmount = ownAmount;
-        this.friend = friend;
+        this.rate = rate;
+        this.days = days;
     }
 
-    countMoney() {
-        if(this.friend === null) {
-            return this.ownAmount;
+    set rate(value){
+        if(value < 0 ) {
+            throw new RangeError('rate must be > 0');
         }
-        if(Array.isArray(this.friend)) {
-            return this.ownAmount + this.friend.reduce((money, friend)=>(money + friend.countMoney()), 0)
-        }
-        return this.ownAmount + this.friend.countMoney();
+        this._rate = value;
     }
-}
 
-const friend0 = new Friend('Jane', 50, null);
+    get rate() {
+        return this._rate;
+    }
 
-const friend1 = new Friend('Alex', 20, null);
 
-const friend2 = new Friend('John', 10, friend1);
+    set days(value) {
+        if(typeof value !== 'number') {
+            throw new TypeError('Days must be a number');
+        }
 
-const friend3 = new Friend('Tony', 20, [friend2, friend0]);
+        this._days = value;
+    }
+
+    get days() {
+        return this._days;
+    }
+
+
+    getSalary() {
+        return this.rate*this.days;
+    }
+ }
