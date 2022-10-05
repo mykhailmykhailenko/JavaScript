@@ -29,6 +29,13 @@ class MyNewArray {
         }
         return arr
     }
+    static isMyNewArray(obj) {
+        return obj instanceof MyNewArray;
+    }
+    
 }
 
-const mnarr = new MyNewArray();
+
+const myarr = new MyNewArray();
+
+MyNewArray.isMyNewArray(myarr) //true
