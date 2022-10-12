@@ -74,7 +74,7 @@ class MyNewArray {
                 return true
             } 
         }
-        return false 
+        return false  
     }
 
     static isMyNewArray(obj) {
