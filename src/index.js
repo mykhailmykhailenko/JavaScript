@@ -1,37 +1,38 @@
 'use strict'
 
-const arr = [2, 3, 4, 5, 6, 7, 8, 9, 10];
+class Stack {
+    constructor(maxSize, ...arr){
+        this._maxSize = maxSize;
+        this._size = 0;
+        for (const item of arr) {
+            this.push(item);
+        }
+    }
 
-// function binarySearchFunction(array, searchValue) {
-//     let start = 0;
-//     let end = array.length-1;
-//     let middle = Math.round((start+end)/2);
+    get size() {
+        return this._size;
+    }
 
-//     while(true) {
-//         if(searchValue === array[middle]) {
-//             return middle;
-//         }
-//         if (searchValue > array[middle]){
-//             start = middle + 1;
-//             middle = Math.floor((start+end)/2)
-//         } else {
-//             end = middle - 1;
-//             middle = Math.floor((start+end)/2);
-//         }
-//     }
-// }
+    get isEmpty() {
+        return this._size === 0;
+    }
+
+    push(value) {
+        if(this._size >= this._maxSize){
+            throw new RangeError('Stack overflow');
+        }
+        this[`_${this.size}`] = value;
+        return ++this._size;
+    }
+
+    pop(){
+        const lastItem = this[`_${this.size-1}`];
+        delete this[`_${this.size-1}`];
+        return lastItem;
+    }
 
 
-
-function resursiveBinary(array, searchValue) {
-    const middle = Math.ceil((array.length-1)/2);
-    if(array[middle] === searchValue) {
-        return middle;
-    } else if(array[middle] > searchValue) {
-        return resursiveBinary(array.slice(0, middle), searchValue);
-    } else if (array[middle] < searchValue) {
-        return middle + resursiveBinary(array.slice(middle), searchValue);
-    } else {
-        return -1;
+    pick() {
+        return this[`_${this.size-1}`]
     }
 }
