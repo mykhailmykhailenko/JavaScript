@@ -1,7 +1,7 @@
 'use strict'
 
 class Stack {
-    constructor(maxSize, ...arr){
+    constructor(maxSize = 10, ...arr){
         this._maxSize = maxSize;
         this._size = 0;
         for (const item of arr) {
@@ -28,6 +28,7 @@ class Stack {
     pop(){
         const lastItem = this[`_${this.size-1}`];
         delete this[`_${this.size-1}`];
+        this._size--;
         return lastItem;
     }
 
@@ -36,3 +37,7 @@ class Stack {
         return this[`_${this.size-1}`]
     }
 }
+
+
+
+
