@@ -38,6 +38,60 @@ class Stack {
     }
 }
 
+/*
+Парні дужки
+()[] // true
+{([])} //true
+(}[)]) //false
+{ // false
+Написати функцію, яка перевіряє переданий їй рядок на симетричність дужок.
+Пари дужок краще зберігати в об'єкті
+{
+    '(':')',
+    '{':'}',
+    '[':']'
+}
+1. Пройтись циклом по рядку.
+2. Якщо символ, який перед нами на цій ітерації - це відкриваюча дужка, то ми її зберігаємо в стек.
+3. Якщо перед нами закриваюча дужка, то ми заглядаємо в стек і дивимось, чи є вона тою самою закриваючою, парною до цієї.
+        Якщо вона парна, вони обидві аннігілюються
+        Якщо це не пара до відкриваючої - одразу повертаєм false
+4. Якщо ми дійшли до кінця рядку - треба проаналізувати, чи лишилось щось у стеку.
+*/
+
+
+function checkSequence(str, braces) {
+    const stack = new Stack(str.length);
+    const closeBraces = Object.values(braces);
+    for (const symb of str) {
+          if(braces[symb]){
+            stack.push(symb);
+            continue;
+          }
+          if(closeBraces.includes(symb) && stack.isEmpty){
+            return false
+          }
+          const lastItemFromStack = stack.pick();
+          const correctCloseBrace = braces[lastItemFromStack]
+          if(symb === correctCloseBrace){
+            stack.pop();
+          } else if (closeBraces.includes(symb) || braces[symb]){
+            return false;
+          }
+    }
+
+    return stack.isEmpty
+}
+
+
+const braces = {
+    '(':')',
+    '{':'}',
+    '[':']'
+}
+
+checkSequence('({})[]', braces)
+
 
 
 
