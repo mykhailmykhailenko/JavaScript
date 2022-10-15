@@ -90,7 +90,7 @@ const braces = {
     '[':']'
 }
 
-checkSequence('({})[]', braces)
+checkSequence('({})[]', braces) 
 
 
 
